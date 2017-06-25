@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, asset, Pano, Text, View } from 'react-vr';
 import Screen from './components/Screen.js'
+import api_key from './keys/keys.js'
 
 export default class Theater extends Component {
   componentDidMount(){
@@ -9,7 +10,7 @@ export default class Theater extends Component {
       headers: {
         'Host': 'api.vimeo.com',
         'Content-Type': 'application/vnd.vimeo.video+json',
-        'Authorization': 'bearer 779475c5d1b10ec3aaaae4eed892088a'
+        'Authorization': `bearer ${api_key}`
       }
     })
     .then(response => response.json())
